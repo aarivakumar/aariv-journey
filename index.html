@@ -116,8 +116,10 @@ button:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 .timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
 .entry { display: grid; grid-template-columns: 7.5rem 1fr; gap: 1.5rem; padding-block: 1.4rem; border-top: 1px solid var(--line); }
 .entry:last-child { border-bottom: 1px solid var(--line); }
-.when { font-family: var(--mono); font-size: 0.85rem; color: var(--muted); padding-top: 0.25rem; font-variant-numeric: tabular-nums; }
+.when { font-family: var(--display); font-size: 1.6rem; font-weight: 800; line-height: 1.2; color: var(--fg); font-variant-numeric: tabular-nums; }
+.items { display: grid; gap: 1.5rem; min-width: 0; }
 .what { display: grid; gap: 0.5rem; min-width: 0; }
+.item + .item { padding-top: 1.5rem; border-top: 1px dashed var(--line); }
 .what h3 { font-size: 1.3rem; font-weight: 700; }
 .what .result {
   justify-self: start;
@@ -211,174 +213,162 @@ footer { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
     </div>
 
     <ol class="timeline" id="timeline">
-      <li class="entry" data-area="robotics community">
-        <div class="when">2023–2024</div>
-        <div class="what">
-          <span class="area">Robotics · Teaching</span>
-          <h3>Robotics and Coding Camp Assistant</h3>
-          <span class="result service">100+ kids served</span>
-          <p>I helped instructors at a camp for more than 100 kids, giving campers hands-on help building robots and writing code and keeping younger students engaged.</p>
+      <li class="entry">
+        <div class="when">2023</div>
+        <div class="items">
+          <div class="item what" data-area="robotics community">
+            <span class="area">Robotics · Teaching · 2023–2024</span>
+            <h3>Robotics and Coding Camp Assistant</h3>
+            <span class="result service">100+ kids served</span>
+            <p>I helped instructors at a camp for more than 100 kids, giving campers hands-on help building robots and writing code and keeping younger students engaged.</p>
+          </div>
+          <div class="item what" data-area="chess">
+            <span class="area">Chess · 2023–2026</span>
+            <h3>State Chess Championship</h3>
+            <span class="result">Silver medal</span>
+            <p>I earned a silver medal at the state-level championship after winning medals in several qualifying tournaments. Chess taught me to plan ahead, stay focused, and keep calm under pressure.</p>
+          </div>
         </div>
       </li>
 
-      <li class="entry" data-area="chess">
-        <div class="when">2023–2026</div>
-        <div class="what">
-          <span class="area">Chess</span>
-          <h3>State Chess Championship</h3>
-          <span class="result">Silver medal</span>
-          <p>I earned a silver medal at the state-level championship after winning medals in several qualifying tournaments. Chess taught me to plan ahead, stay focused, and keep calm under pressure.</p>
-        </div>
-      </li>
-
-      <li class="entry" data-area="robotics chess">
+      <li class="entry">
         <div class="when">2024</div>
-        <div class="what">
-          <span class="area">Robotics · Swimming</span>
-          <h3>Competition Wins</h3>
-          <span class="result">2 robotics wins · 1 swimming win</span>
-          <ul class="wins">
-            <li><span class="cat">Robotics</span><span>Won 2 competitions</span></li>
-            <li><span class="cat">Swimming</span><span>Won 1 competition</span></li>
-          </ul>
+        <div class="items">
+          <div class="item what" data-area="robotics chess">
+            <span class="area">Robotics · Swimming</span>
+            <h3>Competition Wins</h3>
+            <span class="result">2 robotics wins · 1 swimming win</span>
+            <ul class="wins">
+              <li><span class="cat">Robotics</span><span>Won 2 competitions</span></li>
+              <li><span class="cat">Swimming</span><span>Won 1 competition</span></li>
+            </ul>
+          </div>
         </div>
       </li>
 
-      <li class="entry" data-area="robotics chess">
+      <li class="entry">
         <div class="when">2025</div>
-        <div class="what">
-          <span class="area">Robotics · Swimming</span>
-          <h3>Competition Wins</h3>
-          <span class="result">2 robotics wins · 1 swimming win</span>
-          <ul class="wins">
-            <li><span class="cat">Robotics</span><span>Won 2 competitions</span></li>
-            <li><span class="cat">Swimming</span><span>Won 1 competition</span></li>
-          </ul>
+        <div class="items">
+          <div class="item what" data-area="ai">
+            <span class="area">Artificial intelligence · 2025–2026</span>
+            <h3>Presidential AI Challenge</h3>
+            <span class="result">Regional winner · National finalist</span>
+            <p>I won at the regional level and advanced to the national finals. As part of the national recognition, I visited the White House, met the First Lady, and spoke with members of the House of Representatives about my work. It made me a stronger public speaker.</p>
+          </div>
+          <div class="item what" data-area="robotics">
+            <span class="area">Robotics · 2025–2026</span>
+            <h3>FIRST LEGO League Challenge</h3>
+            <span class="result">Innovation Award · Qualifier and State</span>
+            <p>My team won the Innovation Award at both the qualifier and the state competition for our creative solution to a real-world problem. I also helped design, build and program our competition robots.</p>
+          </div>
+          <div class="item what" data-area="robotics chess">
+            <span class="area">Robotics · Swimming</span>
+            <h3>Competition Wins</h3>
+            <span class="result">2 robotics wins · 1 swimming win</span>
+            <ul class="wins">
+              <li><span class="cat">Robotics</span><span>Won 2 competitions</span></li>
+              <li><span class="cat">Swimming</span><span>Won 1 competition</span></li>
+            </ul>
+          </div>
         </div>
       </li>
 
-      <li class="entry" data-area="ai">
-        <div class="when">2025–2026</div>
-        <div class="what">
-          <span class="area">Artificial intelligence</span>
-          <h3>Presidential AI Challenge</h3>
-          <span class="result">Regional winner · National finalist</span>
-          <p>I won at the regional level and advanced to the national finals. As part of the national recognition, I visited the White House, met the First Lady, and spoke with members of the House of Representatives about my work. It made me a stronger public speaker.</p>
-        </div>
-      </li>
-
-      <li class="entry" data-area="robotics">
-        <div class="when">2025–2026</div>
-        <div class="what">
-          <span class="area">Robotics</span>
-          <h3>FIRST LEGO League Challenge</h3>
-          <span class="result">Innovation Award · Qualifier and State</span>
-          <p>My team won the Innovation Award at both the qualifier and the state competition for our creative solution to a real-world problem. I also helped design, build and program our competition robots.</p>
-        </div>
-      </li>
-
-      <li class="entry" data-area="robotics chess">
+      <li class="entry">
         <div class="when">2026</div>
-        <div class="what">
-          <span class="area">Robotics · Swimming</span>
-          <h3>Competition Wins</h3>
-          <span class="result">2 robotics wins · 1 swimming win</span>
-          <ul class="wins">
-            <li><span class="cat">Robotics</span><span>Won 2 competitions</span></li>
-            <li><span class="cat">Swimming</span><span>Won 1 competition</span></li>
-          </ul>
+        <div class="items">
+          <div class="item what" data-area="ai robotics">
+            <span class="area">Physical AI · Robotics</span>
+            <h3>Coding Physical AI Robots</h3>
+            <span class="result">myAGV · myCobot · Arm101</span>
+            <p>I coded several physical AI robots: myAGV, a mobile robot that drives around on its own, and two robot arms, myCobot and Arm101. Programming real robots taught me how AI has to deal with motors, sensors and the real world, not just a screen.</p>
+          </div>
+          <div class="item what" data-area="community">
+            <span class="area">App development · Community</span>
+            <h3>App for a Local Senior Center</h3>
+            <span class="result service">Delivered to ~80 seniors</span>
+            <p>I designed and built an app to help seniors at a local senior center in their everyday lives. It was my chance to use coding to serve real people in my community, not just to compete.</p>
+          </div>
+          <div class="item what" data-area="robotics community">
+            <span class="area">Robotics · Mentoring · 2026–2027</span>
+            <h3>FIRST LEGO League Explore Mentor</h3>
+            <span class="result service">3 teams mentored</span>
+            <p>I mentor three teams of younger students. I teach them the basics of coding LEGO robots and guide each team to a working prototype. It has taught me patience, leadership, and how to explain technical ideas clearly.</p>
+          </div>
+          <div class="item what" data-area="robotics chess">
+            <span class="area">Robotics · Swimming</span>
+            <h3>Competition Wins</h3>
+            <span class="result">2 robotics wins · 1 swimming win</span>
+            <ul class="wins">
+              <li><span class="cat">Robotics</span><span>Won 2 competitions</span></li>
+              <li><span class="cat">Swimming</span><span>Won 1 competition</span></li>
+            </ul>
+          </div>
         </div>
       </li>
 
-      <li class="entry" data-area="ai robotics">
-        <div class="when">2026</div>
-        <div class="what">
-          <span class="area">Physical AI · Robotics</span>
-          <h3>Coding Physical AI Robots</h3>
-          <span class="result">myAGV · myCobot · Arm101</span>
-          <p>I coded several physical AI robots: myAGV, a mobile robot that drives around on its own, and two robot arms, myCobot and Arm101. Programming real robots taught me how AI has to deal with motors, sensors and the real world, not just a screen.</p>
-        </div>
-      </li>
-
-      <li class="entry" data-area="community">
-        <div class="when">2026</div>
-        <div class="what">
-          <span class="area">App development · Community</span>
-          <h3>App for a Local Senior Center</h3>
-          <span class="result service">Delivered to ~80 seniors</span>
-          <p>I designed and built an app to help seniors at a local senior center in their everyday lives. It was my chance to use coding to serve real people in my community, not just to compete.</p>
-        </div>
-      </li>
-
-      <li class="entry" data-area="robotics community">
-        <div class="when">2026–2027</div>
-        <div class="what">
-          <span class="area">Robotics · Mentoring</span>
-          <h3>FIRST LEGO League Explore Mentor</h3>
-          <span class="result service">3 teams mentored</span>
-          <p>I mentor three teams of younger students. I teach them the basics of coding LEGO robots and guide each team to a working prototype. It has taught me patience, leadership, and how to explain technical ideas clearly.</p>
-        </div>
-      </li>
-
-      <li class="entry future" data-area="robotics chess">
+      <li class="entry future">
         <div class="when">2027</div>
-        <div class="what">
-          <span class="area">Robotics · Swimming</span>
-          <h3>Competition Goals</h3>
-          <span class="result goal">Goal</span>
-          <ul class="wins">
-            <li><span class="cat">Robotics</span><span>Win 2 competitions</span></li>
-            <li><span class="cat">Swimming</span><span>Win 1 competition</span></li>
-          </ul>
+        <div class="items">
+          <div class="item what" data-area="robotics chess">
+            <span class="area">Robotics · Swimming</span>
+            <h3>Competition Goals</h3>
+            <span class="result goal">Goal</span>
+            <ul class="wins">
+              <li><span class="cat">Robotics</span><span>Win 2 competitions</span></li>
+              <li><span class="cat">Swimming</span><span>Win 1 competition</span></li>
+            </ul>
+          </div>
         </div>
       </li>
 
-      <li class="entry future" data-area="robotics chess">
+      <li class="entry future">
         <div class="when">2028</div>
-        <div class="what">
-          <span class="area">Robotics · Swimming</span>
-          <h3>Competition Goals</h3>
-          <span class="result goal">Goal</span>
-          <ul class="wins">
-            <li><span class="cat">Robotics</span><span>Win 2 competitions</span></li>
-            <li><span class="cat">Swimming</span><span>Win 1 competition</span></li>
-          </ul>
+        <div class="items">
+          <div class="item what" data-area="robotics chess">
+            <span class="area">Robotics · Swimming</span>
+            <h3>Competition Goals</h3>
+            <span class="result goal">Goal</span>
+            <ul class="wins">
+              <li><span class="cat">Robotics</span><span>Win 2 competitions</span></li>
+              <li><span class="cat">Swimming</span><span>Win 1 competition</span></li>
+            </ul>
+          </div>
         </div>
       </li>
 
-      <li class="entry future" data-area="robotics chess">
+      <li class="entry future">
         <div class="when">2029</div>
-        <div class="what">
-          <span class="area">Robotics · Swimming</span>
-          <h3>Competition Goals</h3>
-          <span class="result goal">Goal</span>
-          <ul class="wins">
-            <li><span class="cat">Robotics</span><span>Win 2 competitions</span></li>
-            <li><span class="cat">Swimming</span><span>Win 1 competition</span></li>
-          </ul>
+        <div class="items">
+          <div class="item what" data-area="robotics chess">
+            <span class="area">Robotics · Swimming</span>
+            <h3>Competition Goals</h3>
+            <span class="result goal">Goal</span>
+            <ul class="wins">
+              <li><span class="cat">Robotics</span><span>Win 2 competitions</span></li>
+              <li><span class="cat">Swimming</span><span>Win 1 competition</span></li>
+            </ul>
+          </div>
+          <div class="item what" data-area="robotics community">
+            <span class="area">Robotics · Open source · 2029–2030</span>
+            <h3>Open-Sourcing for the Robotics Community</h3>
+            <span class="result goal">Goal</span>
+            <p>I plan to open-source my robotics work so other students and teams can learn from it, use it, and build on it.</p>
+          </div>
         </div>
       </li>
 
-      <li class="entry future" data-area="robotics community">
-        <div class="when">2029–2030</div>
-        <div class="what">
-          <span class="area">Robotics · Open source</span>
-          <h3>Open-Sourcing for the Robotics Community</h3>
-          <span class="result goal">Goal</span>
-          <p>I plan to open-source my robotics work so other students and teams can learn from it, use it, and build on it.</p>
-        </div>
-      </li>
-
-      <li class="entry future" data-area="robotics chess">
+      <li class="entry future">
         <div class="when">2030</div>
-        <div class="what">
-          <span class="area">Robotics · Swimming</span>
-          <h3>Competition Goals</h3>
-          <span class="result goal">Goal</span>
-          <ul class="wins">
-            <li><span class="cat">Robotics</span><span>Win 2 competitions</span></li>
-            <li><span class="cat">Swimming</span><span>Win 1 competition</span></li>
-          </ul>
+        <div class="items">
+          <div class="item what" data-area="robotics chess">
+            <span class="area">Robotics · Swimming</span>
+            <h3>Competition Goals</h3>
+            <span class="result goal">Goal</span>
+            <ul class="wins">
+              <li><span class="cat">Robotics</span><span>Win 2 competitions</span></li>
+              <li><span class="cat">Swimming</span><span>Win 1 competition</span></li>
+            </ul>
+          </div>
         </div>
       </li>
     </ol>
@@ -411,11 +401,15 @@ footer { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
 <script>
 (function () {
   var buttons = document.querySelectorAll('.filters button');
-  var entries = document.querySelectorAll('#timeline .entry');
+  var items = document.querySelectorAll('#timeline .item');
+  var years = document.querySelectorAll('#timeline .entry');
   function apply(filter) {
     buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.filter === filter)); });
-    entries.forEach(function (e) {
+    items.forEach(function (e) {
       e.hidden = filter !== 'all' && e.dataset.area.split(' ').indexOf(filter) === -1;
+    });
+    years.forEach(function (y) {
+      y.hidden = !y.querySelector('.item:not([hidden])');
     });
     try { localStorage.setItem('journey-filter', filter); } catch (err) {}
   }
