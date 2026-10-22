@@ -129,8 +129,8 @@ button:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 .entry.future .when { color: var(--teal); }
 .wins { list-style: none; margin: 0.25rem 0 0; padding: 0; display: grid; gap: 0.35rem; }
 .wins li { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.9rem; }
-.wins .yr { font-family: var(--mono); font-size: 0.85rem; font-weight: 600; min-width: 3rem; font-variant-numeric: tabular-nums; }
-.wins .goal-row { color: var(--muted); }
+.wins .cat { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: var(--teal); min-width: 6rem; }
+.entry.future .wins { color: var(--muted); }
 .what p { max-width: 38rem; }
 .area { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); }
 
@@ -230,6 +230,32 @@ footer { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
         </div>
       </li>
 
+      <li class="entry" data-area="robotics chess">
+        <div class="when">2024</div>
+        <div class="what">
+          <span class="area">Robotics · Swimming</span>
+          <h3>Competition Wins</h3>
+          <span class="result">2 robotics wins · 1 swimming win</span>
+          <ul class="wins">
+            <li><span class="cat">Robotics</span><span>Won 2 competitions</span></li>
+            <li><span class="cat">Swimming</span><span>Won 1 competition</span></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="entry" data-area="robotics chess">
+        <div class="when">2025</div>
+        <div class="what">
+          <span class="area">Robotics · Swimming</span>
+          <h3>Competition Wins</h3>
+          <span class="result">2 robotics wins · 1 swimming win</span>
+          <ul class="wins">
+            <li><span class="cat">Robotics</span><span>Won 2 competitions</span></li>
+            <li><span class="cat">Swimming</span><span>Won 1 competition</span></li>
+          </ul>
+        </div>
+      </li>
+
       <li class="entry" data-area="ai">
         <div class="when">2025–2026</div>
         <div class="what">
@@ -247,6 +273,19 @@ footer { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
           <h3>FIRST LEGO League Challenge</h3>
           <span class="result">Innovation Award · Qualifier and State</span>
           <p>My team won the Innovation Award at both the qualifier and the state competition for our creative solution to a real-world problem. I also helped design, build and program our competition robots.</p>
+        </div>
+      </li>
+
+      <li class="entry" data-area="robotics chess">
+        <div class="when">2026</div>
+        <div class="what">
+          <span class="area">Robotics · Swimming</span>
+          <h3>Competition Wins</h3>
+          <span class="result">2 robotics wins · 1 swimming win</span>
+          <ul class="wins">
+            <li><span class="cat">Robotics</span><span>Won 2 competitions</span></li>
+            <li><span class="cat">Swimming</span><span>Won 1 competition</span></li>
+          </ul>
         </div>
       </li>
 
@@ -270,6 +309,45 @@ footer { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
         </div>
       </li>
 
+      <li class="entry future" data-area="robotics chess">
+        <div class="when">2027</div>
+        <div class="what">
+          <span class="area">Robotics · Swimming</span>
+          <h3>Competition Goals</h3>
+          <span class="result goal">Goal</span>
+          <ul class="wins">
+            <li><span class="cat">Robotics</span><span>Win 2 competitions</span></li>
+            <li><span class="cat">Swimming</span><span>Win 1 competition</span></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="entry future" data-area="robotics chess">
+        <div class="when">2028</div>
+        <div class="what">
+          <span class="area">Robotics · Swimming</span>
+          <h3>Competition Goals</h3>
+          <span class="result goal">Goal</span>
+          <ul class="wins">
+            <li><span class="cat">Robotics</span><span>Win 2 competitions</span></li>
+            <li><span class="cat">Swimming</span><span>Win 1 competition</span></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="entry future" data-area="robotics chess">
+        <div class="when">2029</div>
+        <div class="what">
+          <span class="area">Robotics · Swimming</span>
+          <h3>Competition Goals</h3>
+          <span class="result goal">Goal</span>
+          <ul class="wins">
+            <li><span class="cat">Robotics</span><span>Win 2 competitions</span></li>
+            <li><span class="cat">Swimming</span><span>Win 1 competition</span></li>
+          </ul>
+        </div>
+      </li>
+
       <li class="entry future" data-area="robotics community">
         <div class="when">2029–2030</div>
         <div class="what">
@@ -280,20 +358,25 @@ footer { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
         </div>
       </li>
 
-      <li class="entry" data-area="robotics chess">
-        <div class="when">Every year</div>
-        <div class="what">
-          <span class="area">Robotics · Swimming</span>
-          <h3>More Wins</h3>
-          <span class="result">2 robotics wins · 1 swimming win a year</span>
-          <ul class="wins">
-            <li><span class="yr">2024</span><span>2 robotics wins · 1 swimming win</span></li>
             <li><span class="yr">2025</span><span>2 robotics wins · 1 swimming win</span></li>
             <li><span class="yr">2026</span><span>2 robotics wins · 1 swimming win</span></li>
             <li class="goal-row"><span class="yr">2027</span><span>2 robotics wins · 1 swimming win</span><span class="result goal">Goal</span></li>
             <li class="goal-row"><span class="yr">2028</span><span>2 robotics wins · 1 swimming win</span><span class="result goal">Goal</span></li>
             <li class="goal-row"><span class="yr">2029</span><span>2 robotics wins · 1 swimming win</span><span class="result goal">Goal</span></li>
             <li class="goal-row"><span class="yr">2030</span><span>2 robotics wins · 1 swimming win</span><span class="result goal">Goal</span></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="entry future" data-area="robotics chess">
+        <div class="when">2030</div>
+        <div class="what">
+          <span class="area">Robotics · Swimming</span>
+          <h3>Competition Goals</h3>
+          <span class="result goal">Goal</span>
+          <ul class="wins">
+            <li><span class="cat">Robotics</span><span>Win 2 competitions</span></li>
+            <li><span class="cat">Swimming</span><span>Win 1 competition</span></li>
           </ul>
         </div>
       </li>
