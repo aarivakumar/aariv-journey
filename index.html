@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
-/* Layout: one reading column; a hero with a small chessboard, a row of impact numbers,
+/* Layout: one reading column; a hero, a row of impact numbers,
    then a filterable timeline of the journey, then strengths. */
 :root {
   --bg: #F3F6FA;
@@ -73,7 +73,7 @@ p { margin: 0; }
 }
 
 /* Hero */
-.hero { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
+.hero { display: grid; gap: 2rem; }
 .hero h1 { font-size: clamp(2.6rem, 8vw, 4.5rem); font-weight: 800; letter-spacing: -0.02em; margin-block: 0.4rem 1rem; }
 .hero .lede { font-size: 1.2rem; max-width: 34rem; color: var(--fg); }
 .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
@@ -81,15 +81,6 @@ p { margin: 0; }
   font-family: var(--mono); font-size: 0.8rem;
   padding: 0.3rem 0.65rem; border: 1px solid var(--line); border-radius: 999px; color: var(--muted);
 }
-.board {
-  width: 9rem; aspect-ratio: 1; max-width: 100%;
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  border: 2px solid var(--square-dark); border-radius: 4px; overflow: hidden;
-}
-.board span { display: grid; place-items: center; font-size: 1.5rem; line-height: 1; }
-.board span.l { background: var(--square-light); color: var(--square-dark); }
-.board span.d { background: var(--square-dark); color: var(--square-light); }
-.board-caption { font-family: var(--mono); font-size: 0.7rem; color: var(--muted); text-align: center; margin-top: 0.4rem; }
 
 /* Impact numbers */
 .impact { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
@@ -148,10 +139,6 @@ button:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 footer { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
 
 @media (max-width: 640px) {
-  .hero { grid-template-columns: 1fr; }
-  .board-box { order: -1; }
-  .board { width: 6rem; }
-  .board-caption { text-align: left; }
   .impact { grid-template-columns: repeat(2, 1fr); }
   .entry { grid-template-columns: 1fr; gap: 0.4rem; }
   .strengths { grid-template-columns: 1fr; }
@@ -181,15 +168,6 @@ footer { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
         <span class="tag">Chess</span>
         <span class="tag">Mentoring</span>
       </div>
-    </div>
-    <div class="board-box" aria-hidden="true">
-      <div class="board">
-        <span class="l">♜</span><span class="d"></span><span class="l"></span><span class="d">♚</span>
-        <span class="d"></span><span class="l">♟</span><span class="d"></span><span class="l"></span>
-        <span class="l"></span><span class="d"></span><span class="l">♘</span><span class="d"></span>
-        <span class="d">♔</span><span class="l"></span><span class="d"></span><span class="l">♖</span>
-      </div>
-      <p class="board-caption">Plan ahead. Stay calm.</p>
     </div>
   </header>
 
