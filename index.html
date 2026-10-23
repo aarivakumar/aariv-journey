@@ -82,6 +82,15 @@ p { margin: 0; }
   padding: 0.3rem 0.65rem; border: 1px solid var(--line); border-radius: 999px; color: var(--muted);
 }
 
+.gallery-link {
+  display: inline-block; margin-top: 1.5rem;
+  font: 700 1rem var(--body); text-decoration: none;
+  padding: 0.7rem 1.2rem; border-radius: 999px;
+  background: var(--fg); color: var(--bg);
+}
+.gallery-link:hover { background: var(--teal); }
+.gallery-link:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
 /* Impact numbers */
 .impact { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
 .impact div { background: var(--surface); padding: 1.1rem 1rem; display: grid; gap: 0.2rem; align-content: start; }
@@ -168,6 +177,7 @@ footer { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
         <span class="tag">Chess</span>
         <span class="tag">Mentoring</span>
       </div>
+      <a class="gallery-link" href="gallery.html">View gallery of photos →</a>
     </div>
   </header>
 

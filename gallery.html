@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Photos from Aariv Kumar's journey in AI, robotics and community service.">
+<title>Aariv's Photo Gallery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: same tokens as the journey page; a responsive photo grid with a click-to-enlarge viewer. */
+:root {
+  --bg: #F3F6FA; --surface: #FFFFFF; --fg: #13203A; --muted: #55627A; --line: #D8DFEA;
+  --teal: #1F6F7D; --gold: #B97C06; --scrim: rgba(13, 20, 34, 0.92);
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0D1422; --surface: #152036; --fg: #E7EDF6; --muted: #9DABC2; --line: #26344F;
+    --teal: #6CC5D3; --gold: #F0B544; --scrim: rgba(5, 9, 16, 0.94);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0D1422; --surface: #152036; --fg: #E7EDF6; --muted: #9DABC2; --line: #26344F;
+  --teal: #6CC5D3; --gold: #F0B544; --scrim: rgba(5, 9, 16, 0.94);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 1.0625rem; line-height: 1.6; }
+.wrap {
+  max-width: 72rem; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 2.5rem 4rem;
+  display: grid; gap: 2rem;
+}
+.back { font-family: var(--mono); font-size: 0.85rem; color: var(--teal); text-decoration: none; font-weight: 600; justify-self: start; }
+.back:hover { text-decoration: underline; }
+.eyebrow { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); font-weight: 600; margin: 0; }
+h1 { font-family: var(--display); font-size: clamp(2.2rem, 6vw, 3.4rem); font-weight: 800; line-height: 1.1; margin: 0.4rem 0 0; text-wrap: balance; }
+.grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 1.25rem; }
+.grid button {
+  all: unset; box-sizing: border-box; cursor: zoom-in; display: grid; gap: 0.6rem; width: 100%;
+}
+.grid img {
+  width: 100%; max-width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block;
+  border-radius: 8px; background: var(--line);
+  transition: transform 0.2s ease;
+}
+.grid img.doc { object-fit: contain; background: var(--surface); border: 1px solid var(--line); }
+.grid button:hover img { transform: translateY(-2px); }
+.grid button:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; border-radius: 8px; }
+.cap { font-size: 0.95rem; color: var(--fg); line-height: 1.4; }
+.cap small { display: block; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.15rem; }
+
+dialog {
+  border: 0; padding: 0; background: transparent; color: #F3F6FA;
+  max-width: 100vw; max-height: 100vh; width: 100%; height: 100%;
+}
+dialog::backdrop { background: var(--scrim); }
+.viewer {
+  height: 100%; display: grid; grid-template-rows: auto 1fr auto; gap: 0.75rem;
+  padding: max(12px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+}
+.viewer-bar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-family: var(--mono); font-size: 0.85rem; }
+.viewer img { width: 100%; height: 100%; min-height: 0; object-fit: contain; }
+.viewer p { margin: 0; text-align: center; font-size: 1rem; }
+.viewer-nav { display: flex; gap: 0.5rem; }
+.viewer button {
+  font: 600 0.9rem var(--body); color: #F3F6FA; background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25); border-radius: 999px; padding: 0.4rem 0.9rem; cursor: pointer;
+}
+.viewer button:hover { background: rgba(255,255,255,0.22); }
+.viewer button:focus-visible { outline: 3px solid #F0B544; outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .grid img { transition: none; } }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <a class="back" href="./">← Back to my journey</a>
+  <header>
+    <p class="eyebrow">Photo gallery</p>
+    <h1>My journey in pictures</h1>
+  </header>
+
+  <ul class="grid" id="grid">
+    <li><button type="button"><img src="photos/white-house.jpg" alt="Aariv and two teammates in Presidential AI Challenge shirts with OSTP Director Michael Kratsios at the White House" loading="lazy"><span class="cap"><small>Presidential AI Challenge</small>At the White House with my AI Challenge team, presenting our project to Michael Kratsios, Director of the White House Office of Science and Technology Policy (OSTP)</span></button></li>
+    <li><button type="button"><img src="photos/ai-challenge-demo.jpg" alt="Aariv typing on a laptop while Taylor Stockton watches, at a table marked Track 2 Elementary West Regional Champion" loading="lazy"><span class="cap"><small>Presidential AI Challenge</small>Demoing our AI safety project to Taylor Stockton</span></button></li>
+    <li><button type="button"><img src="photos/ai-safety-booth.jpg" alt="Aariv holding a poster for the AI Safety for Kids project at an outdoor booth" loading="lazy"><span class="cap"><small>AI safety for kids</small>Sharing our project with the community</span></button></li>
+    <li><button type="button"><img class="doc" src="photos/quiz-website.jpg" alt="A multiple-choice quiz question about King Ashurbanipal" loading="lazy"><span class="cap"><small>Websites</small>A quiz from one of our learning websites</span></button></li>
+    <li><button type="button"><img src="photos/fll-trophy.jpg" alt="Six FIRST LEGO League team members in matching shirts holding a trophy in front of a FIRST Oregon banner" loading="lazy"><span class="cap"><small>FIRST LEGO League</small>Celebrating with my team and our trophy</span></button></li>
+    <li><button type="button"><img src="photos/fll-judging.jpg" alt="Aariv in a yellow team shirt talking with a judge who holds a clipboard" loading="lazy"><span class="cap"><small>FIRST LEGO League</small>Presenting our project to the judges</span></button></li>
+    <li><button type="button"><img src="photos/senior-center-reachy.jpg" alt="Aariv and teammates with microphones presenting the Reachy Mini robot to seniors at lunch tables" loading="lazy"><span class="cap"><small>Senior center app</small>Presenting our Reachy Mini app to seniors</span></button></li>
+    <li><button type="button"><img src="photos/coding-reachy-mini.jpg" alt="Aariv and two teammates at a table with laptops and the white Reachy Mini robot" loading="lazy"><span class="cap"><small>Physical AI</small>Coding Reachy Mini with my team</span></button></li>
+    <li><button type="button"><img src="photos/circuit-boards.jpg" alt="Aariv holding up a controller board, with a row of boards on the table" loading="lazy"><span class="cap"><small>Electronics</small>Fixing controller boards for a camp</span></button></li>
+    <li><button type="button"><img src="photos/teaching-coding.jpg" alt="Aariv standing beside younger students working on laptops with a small orange robot on the table" loading="lazy"><span class="cap"><small>Teaching</small>Teaching kids robotics</span></button></li>
+    <li><button type="button"><img src="photos/wiz-kidz-awards.jpg" alt="Students holding Best Code trophies on stage in front of a Wiz Kidz AI and Robotics banner" loading="lazy"><span class="cap"><small>Hackathon</small>Winning the Best Code award at the Wiz Kidz hackathon</span></button></li>
+    <li><button type="button"><img src="photos/food-bank.jpg" alt="Team members in hairnets and aprons holding bags of pears at a food bank" loading="lazy"><span class="cap"><small>Community</small>Volunteering at the Oregon Food Bank with my team</span></button></li>
+  </ul>
+</main>
+
+<dialog id="viewer" aria-label="Photo viewer">
+  <div class="viewer">
+    <div class="viewer-bar">
+      <span id="count"></span>
+      <div class="viewer-nav">
+        <button type="button" id="prev">← Prev</button>
+        <button type="button" id="next">Next →</button>
+        <button type="button" id="close">Close</button>
+      </div>
+    </div>
+    <img id="big" alt="">
+    <p id="bigcap"></p>
+  </div>
+</dialog>
+
+<script>
+(function () {
+  var buttons = [].slice.call(document.querySelectorAll('#grid button'));
+  var dlg = document.getElementById('viewer');
+  var big = document.getElementById('big');
+  var cap = document.getElementById('bigcap');
+  var count = document.getElementById('count');
+  var at = 0;
+  function show(i) {
+    at = (i + buttons.length) % buttons.length;
+    var img = buttons[at].querySelector('img');
+    big.src = img.src;
+    big.alt = img.alt;
+    cap.textContent = buttons[at].querySelector('.cap').lastChild.textContent;
+    count.textContent = (at + 1) + ' / ' + buttons.length;
+  }
+  buttons.forEach(function (b, i) {
+    b.addEventListener('click', function () {
+      show(i);
+      if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', '');
+    });
+  });
+  document.getElementById('prev').addEventListener('click', function () { show(at - 1); });
+  document.getElementById('next').addEventListener('click', function () { show(at + 1); });
+  document.getElementById('close').addEventListener('click', function () { dlg.close(); });
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+  document.addEventListener('keydown', function (e) {
+    if (!dlg.open) return;
+    if (e.key === 'ArrowRight') show(at + 1);
+    if (e.key === 'ArrowLeft') show(at - 1);
+  });
+})();
+</script>
+</body>
+</html>
