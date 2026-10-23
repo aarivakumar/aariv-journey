@@ -82,6 +82,9 @@ p { margin: 0; }
   padding: 0.3rem 0.65rem; border: 1px solid var(--line); border-radius: 999px; color: var(--muted);
 }
 
+.hero-video { margin: 1.75rem 0 0; max-width: 34rem; display: grid; gap: 0.5rem; }
+.hero-video video { width: 100%; max-width: 100%; aspect-ratio: 448 / 368; border-radius: 10px; background: #000; display: block; }
+.hero-video figcaption { font-size: 0.9rem; color: var(--muted); }
 .gallery-link {
   display: inline-block; margin-top: 1.5rem;
   font: 700 1rem var(--body); text-decoration: none;
@@ -177,6 +180,13 @@ footer { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
         <span class="tag">Chess</span>
         <span class="tag">Mentoring</span>
       </div>
+      <figure class="hero-video">
+        <video controls preload="metadata" playsinline poster="videos/ai-challenge-interview.jpg">
+          <source src="videos/ai-challenge-interview.mp4" type="video/mp4">
+          Your browser can't play this video.
+        </video>
+        <figcaption>Our team's interview at the Presidential AI Challenge national event (2 min)</figcaption>
+      </figure>
       <a class="gallery-link" href="gallery.html">View gallery of photos →</a>
     </div>
   </header>
